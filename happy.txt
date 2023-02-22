@@ -1,5 +1,5 @@
 sudo apt install nasm
-
+ 
 
 -nographic
 
@@ -10,3 +10,14 @@ ctrl+a, then x
 nasm -f bin ./boot.asm -o ./boot.bin
 
 qemu-system-x86_64 -hda ./boot.bin
+
+lodsb loads the byte from si register to al register
+Caluculate absolute offset: take the segment register multiply it by 16 and add the offset
+Code Segment = 0x7c0
+0x7c0 * 16 = 0x7c00
+
+
+Example offset for absolute address 0x7cff
+
+osdev.org -> source to build kernel  
+
