@@ -21,3 +21,10 @@ Example offset for absolute address 0x7cff
 
 osdev.org -> source to build kernel  
 
+
+==burn to usb===
+ sudo apt-get install -y fdisk
+sudo fdisk -l
+
+== IVT ===
+(Offset : Segment)
