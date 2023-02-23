@@ -28,3 +28,16 @@ sudo fdisk -l
 
 == IVT ===
 (Offset : Segment)
+
+== Disk Access ===
+sudo apt install make
+make 
+
+=== Set graphics on wsl ===
+just follow the windows guide, need to install intel graphic card driver
+
+gdb
+target remote | qemu-system-x86_64 -hda ./boot.bin -S -gdb stdio
+
+
+ 
