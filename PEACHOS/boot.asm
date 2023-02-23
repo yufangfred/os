@@ -9,6 +9,13 @@ times 33 db 0
 start:
     jmp 0x7c0:step2
 
+handle_zero:
+   mov ah, 0eh
+   mov al, 'L'
+   mov bx, 0x00 
+   int 0x10
+   iret
+
 step2:
     cli ; Clear Interrupts
     mov ax, 0x7c0
@@ -18,6 +25,13 @@ step2:
     mov ss, ax
     mov sp, 0x7c00
     sti ; Enables interrupts
+
+    mov word[ss:0x00], handle_zero
+    mov word[ss:0x02], 0x7c0
+
+    ; int 0 
+    mov ax, 0x0000
+    div ax
 
     mov si, message
     call print
